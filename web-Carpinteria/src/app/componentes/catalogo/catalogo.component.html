@@ -37,31 +37,43 @@
     </section>
     <section class="section-productos">
         <div class="contenedor-orden">
+            <div class="contenedor-texto-buscador">
+                <p>Buscar por nombre:</p>
+            </div>
+            <div>
+                <p>Orden:</p>
+            </div>
             <div class="contenedor-buscador">
                 <input type="search" name="buscador" id="" placeholder="Buscar producto">
             </div>
             <div class="contenedor-ordenar">
                 <!-- Orden ascendente, descendente, mayor precio, menor precio -->
-                <p>Orden:</p>
-                <!-- <form>
-                    <label>
-                        <input type="radio" name="orden" id="" value="ascendente" checked>
-                        Ascendente
-                    </label>
-                    <label>
-                        <input type="radio" name="orden" id="" value="descendente">
-                        Descendente
-                    </label>
-                    <label>
-                        <input type="radio" name="precioOrden" id="" value="mayorPrecio" checked>
-                        Mayor precio
-                    </label>
-                    <label>
-                        <input type="radio" name="precioOrden" id="" value="menorPrecio">
-                        Menor precio
-                    </label>
-                    <input type="submit" value="Ordenar">
-                </form> -->
+                <div class="contenedor-listaOrdenar">
+                    <!-- <input class="btn-ordenar" type="button" value="Ascendente - Mayor precio"> -->
+                    <button class="btn-ordenar">
+                        <p>Ascendente - Mayor precio</p>
+                        <img src="../../../assets/iconos/logo-flecha-menu.png" alt="Logo flecha">
+                    </button>
+                    <!-- <form>
+                        <label>
+                            <input type="radio" name="orden" id="" value="ascendente" checked>
+                            Ascendente
+                        </label>
+                        <label>
+                            <input type="radio" name="orden" id="" value="descendente">
+                            Descendente
+                        </label>
+                        <label>
+                            <input type="radio" name="precioOrden" id="" value="mayorPrecio" checked>
+                            Mayor precio
+                        </label>
+                        <label>
+                            <input type="radio" name="precioOrden" id="" value="menorPrecio">
+                            Menor precio
+                        </label>
+                        <input type="submit" value="Ordenar">
+                    </form> -->
+                </div>
             </div>
         </div>
         <div class="contenedor-productos">
