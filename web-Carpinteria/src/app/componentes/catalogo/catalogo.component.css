@@ -1,0 +1,131 @@
+.section-titulo {
+    text-align: center;
+}
+
+.section-general {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: auto;
+}
+
+
+/* -------------------- Sección Filtros -------------------- */
+
+.section-filtros {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+/* ---------- Contenedor Filtrar por precios ---------- */
+
+.contenedor-precios {
+    padding-right: 20px;
+}
+
+.contenedor-rangos {
+    width: 100%;
+}
+
+.contenedor-rangos label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.contenedor-rangos p {
+    margin: 0px;
+}
+
+
+/* -------------------- Sección Productos -------------------- */
+
+.section-productos {
+    width: 100%;
+}
+
+/* ---------- Contenedor Buscar y Ordenar ---------- */
+
+.contenedor-orden {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.contenedor-buscador {
+    width: 100%;
+}
+.contenedor-buscador input {
+    width: 100%;
+    height: 35px;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0px 10px;
+    border: 1px solid rgb(118, 118, 118);
+    outline: none;
+}
+
+.contenedor-buscador input:focus {
+    outline: 1px solid rgb(160, 160, 160);
+}
+
+.contenedor-ordenar {
+    width: 200px;
+    height: 30px;
+}
+
+.contenedor-ordenar p {
+    margin: auto;
+}
+
+
+/* ---------- Contenedor Productos Disponibles ---------- */
+
+.contenedor-productos {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 15px 15px;
+}
+
+
+/* ---------- Diseño tarjeta de producto ---------- */
+
+.contenedor-card {
+    display: flex;
+    flex-direction: column;
+    /* width: 250px; */
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all ease 100ms;
+}
+
+.contenedor-card:hover {
+    box-shadow: 0px 0px 8px 4px rgb(221, 221, 221);
+    transform: translateY(-3px)
+}
+
+.contenedor-card .card-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contenedor-card .card-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-card .card-texto {
+    width: auto;
+    padding: 10px;
+}
+
+.contenedor-card .card-texto p {
+    margin: 0px;
+}
