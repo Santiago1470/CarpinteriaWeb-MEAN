@@ -2,7 +2,10 @@
     <h1>Catálogo</h1>
 </section>
 <section class="section-general">
-    <section class="section-filtros">
+    <section class="section-filtros" [ngClass]="{'mostrar-seccion-filtros': isFiltros}" [ngClass]="{'ocultar-seccion-filtros': !isFiltros}">
+        <div class="cerrar-filtros">
+            <img src="../../../assets/iconos/logo-cerrar.png" alt="Cerrar filtros" (click)="ocultarFiltro()" width="16">
+        </div>
         <div class="contenedor-precios">
             <div>
                 <h5 class="titulo-filtro">Filtrar por precio</h5>
@@ -30,20 +33,26 @@
             </div>
             <div>
                 <ul class="lista-categorias">
-                    <li>Categoría A (2)</li>
-                    <li>Categoría B (10)</li>
-                    <li>Categoría C (5)</li>
+                    <li><a href="">Categoría A (2)</a></li>
+                    <li><a href="">Categoría B (10)</a></li>
+                    <li><a href="">Categoría C (5)</a></li>
                 </ul>
             </div>
         </div>
     </section>
     <section class="section-productos">
         <div class="contenedor-orden">
+            <div class="contenedor-btn-filtros">
+
+            </div>
             <div class="contenedor-texto-buscador">
                 <p>Buscar por nombre:</p>
             </div>
             <div>
                 <p>Orden:</p>
+            </div>
+            <div class="contenedor-btn-filtros">
+                <img class="btn-menu-filtros" src="../../../assets/iconos/logo-menu-filtrar2.png" alt="Botón para abrir filtros" (click)="mostrarFiltros()">
             </div>
             <div class="contenedor-buscador">
                 <input type="search" name="buscador" id="" placeholder="Buscar producto">
@@ -52,11 +61,11 @@
                 <!-- Orden ascendente, descendente, mayor precio, menor precio -->
                 <div class="contenedor-listaOrdenar">
                     <!-- <input class="btn-ordenar" type="button" value="Ascendente - Mayor precio"> -->
-                    <button class="btn-ordenar">
-                        <p>Ascendente - Mayor precio</p>
+                    <button class="btn-ordenar" (click)="mostrarOrden()">
+                        <p>Asc. - Mayor pre...</p>
                         <img src="../../../assets/iconos/logo-flecha-menu.png" alt="Logo flecha">
                     </button>
-                    <!-- <form>
+                    <form class="contenedor-filtros" *ngIf="isOrden">
                         <label>
                             <input type="radio" name="orden" id="" value="ascendente" checked>
                             Ascendente
@@ -65,6 +74,7 @@
                             <input type="radio" name="orden" id="" value="descendente">
                             Descendente
                         </label>
+                        <hr />
                         <label>
                             <input type="radio" name="precioOrden" id="" value="mayorPrecio" checked>
                             Mayor precio
@@ -73,8 +83,8 @@
                             <input type="radio" name="precioOrden" id="" value="menorPrecio">
                             Menor precio
                         </label>
-                        <input type="submit" value="Ordenar">
-                    </form> -->
+                        <input class="btn-filtrar" type="button" value="Ordenar" (click)="ocultarOrden()">
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,4 +1,3 @@
-
 .section-titulo {
     text-align: center;
 }
@@ -14,6 +13,10 @@
 
 
 /* -------------------- Sección Filtros -------------------- */
+
+.cerrar-filtros {
+    display: none;
+}
 
 .section-filtros {
     display: flex;
@@ -57,6 +60,11 @@
     border-bottom: 1px solid gray;
 }
 
+.lista-categorias li a {
+    text-decoration: none;
+    color: black;
+}
+
 
 /* -------------------- Sección Productos -------------------- */
 
@@ -66,6 +74,23 @@
 
 /* ---------- Contenedor Buscar y Ordenar ---------- */
 
+.contenedor-btn-filtros {
+    display: none;
+}
+
+.btn-menu-filtros {
+    cursor: pointer;
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 5px;
+    transition: all ease 200ms;
+}
+
+.btn-menu-filtros:active {
+    border: 1px solid rgb(67, 67, 67);
+    background-color: rgb(201, 201, 201);
+    transform: scale(0.9);
+}
+
 .contenedor-orden {
     display: grid;
     grid-template-columns: 1fr 160px;
@@ -73,7 +98,7 @@
     column-gap: 10px;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .contenedor-orden p {
@@ -102,6 +127,7 @@
 
 .contenedor-listaOrdenar {
     font-size: 1rem;
+    position: relative;
 }
 
 .contenedor-listaOrdenar .btn-ordenar {
@@ -111,7 +137,7 @@
     align-items: center;
     padding-right: 0px;
     padding-left: 5px;
-    width: 100%;
+    /* width: 100%; */
     height: 35px;
     border-radius: 10px;
     border: 1px solid rgb(118, 118, 118);
@@ -132,6 +158,33 @@
 
 .contenedor-listaOrdenar .btn-ordenar img {
     width: 24px;
+}
+
+.contenedor-filtros {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 10px;
+    padding: 5px 10px;
+    z-index: 1;
+    width: 100%;
+}
+
+.contenedor-filtros input[type=button] {
+    width: min-content;
+    margin: 5px auto 0px auto;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid rgb(118, 118, 118);
+    font-family: "Open Sans", sans-serif;
+    transition: all ease 100ms;
+}
+
+.contenedor-filtros input[type=button]:active {
+    border: 1px solid rgb(67, 67, 67);
+    background-color: rgb(201, 201, 201);
 }
 
 
@@ -187,4 +240,122 @@
 
 .contenedor-card .card-texto p {
     margin: 0px;
+}
+
+
+
+@media(max-width: 1020px) {
+    .section-general {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* -------------------- Sección Filtros -------------------- */
+
+    .cerrar-filtros {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transition: all ease 100ms;
+    }
+
+    .cerrar-filtros:active {
+        transform: scale(0.8);
+    }
+
+    .mostrar-seccion-filtros {
+        display: block;
+    }
+
+    .ocultar-seccion-filtros {
+        display: none;
+    }
+
+    .section-filtros {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        background-color: white;
+        z-index: 2;
+        height: 100%;
+        padding: 50px 10px 0px 20px;
+    }
+
+    .contenedor-precios,
+    .contenedor-categorias {
+        width: 80%;
+    }
+
+    /* -------------------- Sección Productos -------------------- */
+
+    /* ---------- Contenedor Buscar y Ordenar ---------- */
+
+    .contenedor-btn-filtros {
+        display: block;
+    }
+
+    .contenedor-orden {
+        grid-template-columns: auto 1fr 160px;
+    }
+
+
+    /* ---------- Contenedor Productos Disponibles ---------- */
+
+    .contenedor-productos {
+        grid-template-columns: repeat(3, 200px);
+    }
+
+    /* ---------- Diseño tarjeta de producto ---------- */
+
+    .contenedor-card .card-img {
+        height: 150px;
+    }
+}
+
+@media(max-width: 700px) {
+    /* -------------------- Sección Productos -------------------- */
+
+    /* ---------- Contenedor Buscar y Ordenar ---------- */
+
+    .contenedor-orden {
+        grid-template-columns: auto 1fr 160px;
+    }
+
+    /* ---------- Contenedor Productos Disponibles ---------- */
+
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 250px);
+    }
+
+    /* ---------- Diseño tarjeta de producto ---------- */
+
+    .contenedor-card .card-img {
+        height: 200px;
+    }
+}
+
+@media(max-width: 560px) {
+    /* -------------------- Sección Productos -------------------- */
+
+    /* ---------- Contenedor Buscar y Ordenar ---------- */
+
+    .contenedor-orden {
+        grid-template-columns: auto 1fr auto;
+        column-gap: 5px;
+        padding: 0px 5px;
+    }
+
+    /* ---------- Contenedor Productos Disponibles ---------- */
+
+    .contenedor-productos {
+        grid-template-columns: repeat(1, 250px);
+        justify-content: center;
+    }
+
+    /* ---------- Diseño tarjeta de producto ---------- */
+
+    .contenedor-card .card-img {
+        height: 200px;
+    }
 }
